@@ -105,7 +105,8 @@ class NerbyRestaurants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -119,9 +120,10 @@ class NerbyRestaurants extends StatelessWidget {
           ),
         ),
         Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: restaurants.map((restaurant) {
-          return _buildNerbyRestaurant(context, restaurant);
-        }).toList()),
+              return _buildNerbyRestaurant(context, restaurant);
+            }).toList()),
       ],
     );
   }
