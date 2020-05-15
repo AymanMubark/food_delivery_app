@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/data/data.dart';
+import 'package:food_delivery_app/screens/cart_screen.dart';
+import 'package:food_delivery_app/widgets/nerby_restaurants.dart';
+import 'package:food_delivery_app/widgets/recent_orders.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -30,7 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 20.0,
               ),
             ),
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => CartScreen())),
           )
         ],
       ),
@@ -53,9 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
                     borderSide: BorderSide(
-                      width: 0.8,
-                      color: Theme.of(context).primaryColor
-                    ),
+                        width: 0.8, color: Theme.of(context).primaryColor),
                   ),
                   hintText: 'Search Food or Restaurant',
                   prefixIcon: Icon(
@@ -69,7 +71,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () {},
                   )),
             ),
-          )
+          ),
+          RecentOrders(),
+          NerbyRestaurants()
         ],
       ),
     );
